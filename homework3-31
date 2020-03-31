@@ -19,6 +19,8 @@ int main(void) {
   
     int dis[11]={0};
     
+    int c = 0, b;
+    
     srand((unsigned int)time(NULL));
     
    
@@ -38,20 +40,37 @@ int main(void) {
         }while (a[i] < 0 || a[i] > 100);
         dis[a[i] / 10]++;
     }
-
-    printf("  100:");
-    for (j = 0; j < dis[10]; j++)
-        putchar('*');
-    putchar('\n');
-
-    for (i = 9; i >= 0; i--)
+    for (i = 0; i <= 10; i++)
     {
-        printf("%2d-%2d:", i * 10, i * 10 + 9);
-        for (j = 0; j < dis[i]; j++)
-            putchar('*');
-        putchar('\n');
+        if (dis[i] > c)
+        
+            c = b = dis[i];
+    }
+        for (i = 0; i < c; i++)
+    {
+        for (j = 0; j <= 10; j++)
+    {
+        if (dis[j] -b>=0)
+            
+            printf("*   ");
+        
+                else
+                    printf("    ");
+    }
+        b--;
+        
+            putchar('\n');
+    }
+        for (i = 0; i <= 10; i++)
+            
+            printf("----");
+    
+            putchar('\n');
+    
+        for (i = 0; i <= 10; i++)
+        
+            printf(" %d ", i * 10);
+    
+    return 0;
     }
 
-    return 0;
-
-}
